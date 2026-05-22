@@ -8,7 +8,10 @@
 --         \ \__\ \ \_______\   \ \__\ \ \__\ \__\ \_______\
 --          \|__|  \|_______|    \|__|  \|__|\|__|\|_______|
 --
--- Version: 1.0.0
+-- Version: 1.0.1
+
+-- Host only instructions
+if not host:isHost() then return end
 
 -- Create API
 local keyAPI = {}
