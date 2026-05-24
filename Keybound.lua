@@ -8,7 +8,7 @@
 --         \ \__\ \ \_______\   \ \__\ \ \__\ \__\ \_______\
 --          \|__|  \|_______|    \|__|  \|__|\|__|\|_______|
 --
--- Version: 1.0.1
+-- Version: 1.0.2
 
 -- Host only instructions
 if not host:isHost() then return end
@@ -20,7 +20,7 @@ local keyAPI = {}
 local keys = {}
 
 -- Store a new keybind
-function keyAPI:new(keybind, cfgName)
+function keyAPI.new(keybind, cfgName)
 	
 	-- Attach bind
 	keybind:key(config:load(cfgName) or keybind:getKey())
