@@ -8,10 +8,18 @@
 --         \ \__\ \ \_______\   \ \__\ \ \__\ \__\ \_______\
 --          \|__|  \|_______|    \|__|  \|__|\|__|\|_______|
 --
--- Version: 1.1.0
+-- Version: 1.1.1
 
 -- Host only instructions
 if not host:isHost() then return end
+
+-- A keybind config.  
+-- `key` refers to the Minecraft keyboard key the keybind is set to.  
+-- `cfg` refers to the config key associated with the keybind.
+---@alias KeybindConfig table<Keybind, {
+--- key: Minecraft.keyCode,
+--- cfg: string,
+--- }>
 
 -- Keybind API's metatable index.
 local keybindIndex = figuraMetatables.Keybind.__index
@@ -21,6 +29,7 @@ local keybindIndex = figuraMetatables.Keybind.__index
 local newMethods = {}
 
 -- A table that holds keybinds for later updating.
+---@type KeybindConfig
 local keys = {}
 
 -- Attaches a config key to a keybind, and attempts to set its key to the config's value.
